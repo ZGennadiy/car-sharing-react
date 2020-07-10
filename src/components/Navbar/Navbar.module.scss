@@ -1,0 +1,168 @@
+@import '../../assets/fonts/fonts';
+@import '../../assets/variables';
+@import '../../assets/mixins';
+
+.navbar {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0px;
+  top: 0px;
+  height: 100vh;
+  width: 64px;
+  background-color: $nav-bg-color;
+
+  &__toggle {
+    display: none;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 32px;
+    left: 16px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    z-index: 15;
+  }
+
+  &__hamburger,
+  &__hamburger::before,
+  &__hamburger::after {
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    border-radius: 4px;
+    transition-duration: $animation-speed;
+    background-color: $base-txt-color;
+  }
+
+  &__hamburger::before {
+    content: '';
+    top: -8px;
+  }
+
+  &__hamburger::after {
+    content: '';
+    top: 8px;
+  }
+
+  &__toggle:checked~&__btn>&__hamburger {
+    transform: rotate(45deg);
+  }
+
+  &__toggle:checked~&__btn>&__hamburger::before {
+    top: 0;
+    transform: rotate(0);
+  }
+
+  &__toggle:checked~&__btn>&__hamburger::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  &__toggle:checked~&__wrapper {
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    transition: width 0.5s ease-out;
+  }
+
+  &__toggle:checked~&__wrapper .menu {
+    display: flex;
+  }
+
+  &__toggle:checked~&__wrapper .social {
+    display: flex;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 0;
+    height: 0;
+    padding-left: 128px;
+    opacity: 0;
+    background-color: $nav-open;
+    transition: width $animation-speed $animation-type;
+  }
+}
+
+.menu {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    display: block;
+    text-transform: uppercase;
+    @include Roboto-medium;
+    font-size: 32px;
+    line-height: 2;
+  }
+
+  &__link {
+    color: $base-txt-color;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    color: $color-accent;
+  }
+}
+
+.social {
+  display: none;
+  position: absolute;
+  bottom: -40px;
+  justify-content: space-between;
+  width: 144px;
+  height: 32px;
+
+  a object:hover {
+    fill: $color-accent;
+  }
+
+  &__link:hover path {
+    fill: $color-accent;
+  }
+}
+
+.langBtn {
+  position: absolute;
+  bottom: 22px;
+  left: 12px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  border-radius: 100%;
+  @include Roboto-bold;
+  font-size: 13px;
+  line-height: 15px;
+  color: $color-accent;
+  background: none;
+  outline: none;
+
+  &:hover {
+    color: $base-txt-color;
+    border: 1px solid $base-txt-color;
+    transition: color $animation-speed $animation-type;
+  }
+
+  &:active {
+    color: $color-accent;
+  }
+}

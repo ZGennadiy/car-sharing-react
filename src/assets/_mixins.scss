@@ -1,0 +1,23 @@
+@mixin Roboto-light {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@mixin Roboto {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@mixin Roboto-medium {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@mixin Roboto-bold {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+}
