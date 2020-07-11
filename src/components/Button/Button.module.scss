@@ -1,0 +1,31 @@
+@import '../../assets/fonts/fonts';
+@import '../../assets/variables';
+@import '../../assets/mixins';
+
+.button {
+  width: 250px;
+  height: 48px;
+  @include Roboto-medium;
+  color: $base-txt-color;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+  background-blend-mode: darken;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    filter: brightness(90%);
+  }
+
+  &:active {
+    filter: brightness(80%);
+  }
+
+  &:disabled {
+    filter: saturate(0%);
+  }
+}

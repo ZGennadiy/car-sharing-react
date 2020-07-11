@@ -1,0 +1,36 @@
+@import '../../assets/fonts/fonts';
+@import '../../assets/variables';
+@import '../../assets/mixins';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    @include Roboto-bold;
+    color: $color-accent;
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+
+    &:hover path {
+      stroke: $color-accent;
+    }
+
+    &:hover .header__city {
+      color: $color-accent;
+    }
+  }
+
+  &__city {
+    margin-left: 8px;
+    @include Roboto;
+    color: $color-additional-dark;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

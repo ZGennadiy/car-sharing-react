@@ -1,0 +1,23 @@
+@import '../../assets/fonts/fonts';
+@import '../../assets/variables';
+@import '../../assets/mixins';
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+  &__copywrite {
+    @include Roboto;
+    font-size: 13px;
+    line-height: 15px;
+    color: $color-additional-dark;
+  }
+
+  &__phone {
+    @include Roboto;
+    font-size: 13px;
+    line-height: 15px;
+    text-decoration: none;
+    color: $color-main;
+  }
+}

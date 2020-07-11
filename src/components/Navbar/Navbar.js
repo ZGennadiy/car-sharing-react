@@ -4,7 +4,7 @@ import {
   FacebookIcon,
   TelegramIcon,
   InstagramIcon,
-} from '../../assets/icons/social/socialIcons';
+} from '../../assets/icons/socialIcons';
 
 export const Navbar = () => {
   const [lang, setLang] = useState('Рус');
@@ -17,53 +17,52 @@ export const Navbar = () => {
         type="checkbox"
       />
       <label className={styles.navbar__btn} htmlFor="navbarToggle">
-        <span className={styles.navbar__hamburger}></span>
+        <span className={styles.navbar__hamburger}> </span>{' '}
       </label>
-
       <nav className={styles.navbar__wrapper}>
         <ul className={styles.menu}>
           <li className={styles.menu__item}>
             <a href="#parking" className={styles.menu__link}>
-              ПАРКОВКА
-            </a>
-          </li>
+              ПАРКОВКА{' '}
+            </a>{' '}
+          </li>{' '}
           <li className={styles.menu__item}>
             <a href="#insurance" className={styles.menu__link}>
-              СТРАХОВКА
-            </a>
-          </li>
+              СТРАХОВКА{' '}
+            </a>{' '}
+          </li>{' '}
           <li className={styles.menu__item}>
             <a href="#petrol" className={styles.menu__link}>
-              БЕНЗИН
-            </a>
-          </li>
+              БЕНЗИН{' '}
+            </a>{' '}
+          </li>{' '}
           <li className={styles.menu__item}>
             <a href="#service" className={styles.menu__link}>
-              ОБСЛУЖИВАНИЕ
-            </a>
+              ОБСЛУЖИВАНИЕ{' '}
+            </a>{' '}
           </li>
-
           <div className={styles.social}>
             <a className={styles.social__link} href="#facebook">
               <TelegramIcon />
-            </a>
+            </a>{' '}
             <a className={styles.social__link} href="#facebook">
               <FacebookIcon />
-            </a>
+            </a>{' '}
             <a className={styles.social__link} href="#instagram">
               <InstagramIcon />
-            </a>
-          </div>
-        </ul>
-      </nav>
+            </a>{' '}
+          </div>{' '}
+        </ul>{' '}
+      </nav>{' '}
       <button
         onClick={() => setLang(lang === 'Рус' ? 'Eng' : 'Рус')}
         id="langBtn"
         value={lang}
         className={styles.langBtn}
       >
-        {lang}
-      </button>
+        {' '}
+        {lang}{' '}
+      </button>{' '}
     </div>
   );
 };
