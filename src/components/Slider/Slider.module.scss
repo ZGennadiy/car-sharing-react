@@ -1,0 +1,89 @@
+@import '../../assets/fonts/fonts';
+@import '../../assets/variables';
+@import '../../assets/mixins';
+
+.slider {
+  position: relative;
+  width: 50%;
+
+  &__item {
+    height: 100%;
+    width: 100%;
+    padding: 32px 96px 32px 96px;
+  }
+
+  &__slider1 {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
+      url('../../assets/img/slider/slide1-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__slider2 {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
+      url('../../assets/img/slider/slide2-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__slider3 {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
+      url('../../assets/img/slider/slide3-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__slider4 {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
+      url('../../assets/img/slider/slide4-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__h2 {
+    margin-top: 208px;
+    margin-bottom: 0;
+    @include Roboto-medium;
+    font-size: 40px;
+    line-height: 47px;
+    color: $base-txt-color;
+  }
+
+  &__descr {
+    margin-top: 8px;
+    margin-bottom: 32px;
+    @include Roboto-light;
+    font-size: 24px;
+    line-height: 100%;
+    color: $color-additional-light;
+  }
+
+  &__prevSlideBtn,
+  &__nextSlideBtn {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 100%;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(14, 194, 97, 0.2);
+    }
+  }
+
+  &__prevSlideBtn {
+    left: 0;
+  }
+
+  &__nextSlideBtn {
+    right: 0;
+  }
+}

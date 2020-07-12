@@ -28,4 +28,29 @@
   &:disabled {
     filter: saturate(0%);
   }
+
+  &_slide-green,
+  &_slide-indigo,
+  &_slide-crimson,
+  &_slide-purple {
+    width: 168px;
+    color: $color-additional-light;
+    border-radius: 4px;
+  }
+
+  &_slide-green {
+    background: linear-gradient(90deg, #13493F 0%, #0C7B1B 100%);
+  }
+
+  &_slide-indigo {
+    background: linear-gradient(90deg, #132949 0%, #0C7B67 100%);
+  }
+
+  &_slide-crimson {
+    background: linear-gradient(90deg, #493013 0%, #7B0C3B 100%);
+  }
+
+  &_slide-purple {
+    background: linear-gradient(90deg, #281349 0%, #720C7B 100%);
+  }
 }
