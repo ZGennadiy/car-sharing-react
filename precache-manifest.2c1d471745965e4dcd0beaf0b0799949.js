@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d505ef9b72a45fabeac6636b8399f0fd",
+    "revision": "6615e85aae3544822f2b1dbe68f30406",
     "url": "/car-sharing-react/index.html"
   },
   {
-    "revision": "49f9ce02f94a5fb96438",
+    "revision": "8350ed49605b7823ea0a",
     "url": "/car-sharing-react/static/css/2.764ccc25.chunk.css"
   },
   {
-    "revision": "bf476ff52c7124a1bd55",
-    "url": "/car-sharing-react/static/css/main.562b6ee9.chunk.css"
+    "revision": "74c6c57d2f232e5afd76",
+    "url": "/car-sharing-react/static/css/main.210e486c.chunk.css"
   },
   {
-    "revision": "49f9ce02f94a5fb96438",
-    "url": "/car-sharing-react/static/js/2.4b6e0ea9.chunk.js"
+    "revision": "8350ed49605b7823ea0a",
+    "url": "/car-sharing-react/static/js/2.03c84251.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/car-sharing-react/static/js/2.4b6e0ea9.chunk.js.LICENSE.txt"
+    "url": "/car-sharing-react/static/js/2.03c84251.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bf476ff52c7124a1bd55",
-    "url": "/car-sharing-react/static/js/main.80ae4532.chunk.js"
+    "revision": "74c6c57d2f232e5afd76",
+    "url": "/car-sharing-react/static/js/main.0a930644.chunk.js"
   },
   {
     "revision": "1c30a063fd1da1ff254d",
@@ -74,5 +74,21 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9feb0110b6dff9ee2b9ebd17f7a1aee6",
     "url": "/car-sharing-react/static/media/Roboto-Regular.9feb0110.woff2"
+  },
+  {
+    "revision": "20d1598ecce51bbfc287186db935909f",
+    "url": "/car-sharing-react/static/media/slide1-bg.20d1598e.jpg"
+  },
+  {
+    "revision": "417f70cd269ca30fcebf8233750eafea",
+    "url": "/car-sharing-react/static/media/slide2-bg.417f70cd.jpg"
+  },
+  {
+    "revision": "fa293b1c1a983e475e3dfeefdeef2f46",
+    "url": "/car-sharing-react/static/media/slide3-bg.fa293b1c.jpg"
+  },
+  {
+    "revision": "70859b0b2b89850eafd9c1825b7d9fcf",
+    "url": "/car-sharing-react/static/media/slide4-bg.70859b0b.jpg"
   }
 ]);
