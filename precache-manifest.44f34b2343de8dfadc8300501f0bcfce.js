@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fbc37bc32b7f3e605182fca5d31dcda2",
+    "revision": "22c0a6bd1e76b16fcf6e0d72a614a93c",
     "url": "/car-sharing-react/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/car-sharing-react/static/css/2.764ccc25.chunk.css"
   },
   {
-    "revision": "f662bb3388d6ef085d5a",
-    "url": "/car-sharing-react/static/css/main.205621d8.chunk.css"
+    "revision": "d40629454cf711cfeb8b",
+    "url": "/car-sharing-react/static/css/main.a16f3bf1.chunk.css"
   },
   {
     "revision": "8350ed49605b7823ea0a",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/car-sharing-react/static/js/2.03c84251.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f662bb3388d6ef085d5a",
+    "revision": "d40629454cf711cfeb8b",
     "url": "/car-sharing-react/static/js/main.5a1b4cc3.chunk.js"
   },
   {
