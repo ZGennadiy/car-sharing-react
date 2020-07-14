@@ -50,15 +50,14 @@ export const Slider = () => {
 
   const dotColl = new Array(slides.length).fill(document.createElement('div'));
 
+  const {className, heading, descr, btnModifier} = slides[slideIndex];
+
   return (
     <div className={styles.slider}>
-      <div className={`${styles.slider__item} ${slides[slideIndex].className}`}>
-        <h2 className={styles.slider__h2}>{slides[slideIndex].heading}</h2>
-        <p className={styles.slider__descr}>{slides[slideIndex].descr}</p>
-        <Button
-          value="Подробнее"
-          btnModifier={slides[slideIndex].btnModifier}
-        />
+      <div className={`${styles.slider__item} ${className}`}>
+        <h2 className={styles.slider__h2}>{heading}</h2>
+        <p className={styles.slider__descr}>{descr}</p>
+        <Button value="Подробнее" btnModifier={btnModifier} />
       </div>
 
       <div className={styles.slider__prevSlideBtn} onClick={getPrevSlide}>
