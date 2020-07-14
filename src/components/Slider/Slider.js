@@ -7,26 +7,26 @@ export const Slider = () => {
   const [slideIndex, setSlideIndex] = useState('0');
   const slides = [
     {
-      className: styles.slider__slider1,
+      className: styles.slider__slider0,
       heading: 'Бесплатная парковка',
       descr:
         'Оставляйте машину на платных городских парковках и разрешенных местах, не нарушая ПДД, а также в аэропортах.',
       btnModifier: 'button_slide-green',
     },
     {
-      className: styles.slider__slider2,
+      className: styles.slider__slider1,
       heading: 'Страховка',
       descr: 'Полная страховка страховка автомобиля',
       btnModifier: 'button_slide-indigo',
     },
     {
-      className: styles.slider__slider3,
+      className: styles.slider__slider2,
       heading: 'Бензин',
       descr: 'Полный бак на любой заправке города за наш счёт',
       btnModifier: 'button_slide-crimson',
     },
     {
-      className: styles.slider__slider4,
+      className: styles.slider__slider3,
       heading: 'Обслуживание',
       descr: 'Автомобиль проходит еженедельное ТО',
       btnModifier: 'button_slide-purple',
@@ -42,6 +42,13 @@ export const Slider = () => {
     const prevIndex = Number(slideIndex) - 1;
     setSlideIndex(prevIndex < 0 ? slides.length - 1 : prevIndex);
   };
+
+  const handleDotClick = ({target}) => {
+    setSlideIndex(target.getAttribute('dotindex'));
+    target.className = `${styles.slider__dotsItem} ${styles.slider__dotsItem_active}`;
+  };
+
+  const dotColl = new Array(slides.length).fill(document.createElement('div'));
 
   return (
     <div className={styles.slider}>
@@ -61,15 +68,22 @@ export const Slider = () => {
         <ArrowRightIcon />
       </div>
 
-      {/* <div className={styles.slider__dots}>
-  <span className={styles.slider__dotsItem} onclick={currentSlide(1)}></span> 
-    <span class={styles.slider__dotsItem} onclick={currentSlide(2)}></span> 
-    <span class={styles.slider__dotsItem} onclick={currentSlide(3)}></span> 
-    <span class={styles.slider__dotsItem} onclick={currentSlide(4)}></span> 
-</div> */}
-
-      {/* <a class="prev" onclick="minusSlide()">&#10094;</a>
-    <a class="next" onclick="plusSlide()">&#10095;</a> */}
+      <div className={styles.slider__dots}>
+        {dotColl.map((dot, i) => {
+          const classList =
+            i === Number(slideIndex)
+              ? `${styles.slider__dotsItem} ${styles.slider__dotsItem_active}`
+              : `${styles.slider__dotsItem}`;
+          return (
+            <div
+              dotindex={i}
+              key={String(i)}
+              onClick={handleDotClick}
+              className={classList}
+            ></div>
+          );
+        })}
+      </div>
     </div>
   );
 };
