@@ -149,8 +149,10 @@
     display: flex;
   }
   &__toggle:checked ~ .langBtn {
+    z-index: 5;
     @media (max-width: $max-mobile) {
       display: block;
+      z-index: 15;
     }
   }
 
@@ -228,7 +230,7 @@
 
 .langBtn {
   position: absolute;
-  z-index: 5;
+  z-index: 15;
   bottom: 22px;
   left: 50%;
   transform: translateX(-50%);
@@ -249,7 +251,6 @@
     left: 16px;
     transform: none;
     bottom: 16px;
-    z-index: 15;
   }
 
   &:hover {
