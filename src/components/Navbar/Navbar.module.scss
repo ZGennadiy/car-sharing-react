@@ -50,36 +50,39 @@
     top: 8px;
   }
 
-  &__toggle:checked~&__btn>&__hamburger {
+  &__toggle:checked ~ &__btn > &__hamburger {
     transform: rotate(45deg);
   }
 
-  &__toggle:checked~&__btn>&__hamburger::before {
+  &__toggle:checked ~ &__btn > &__hamburger::before {
     top: 0;
     transform: rotate(0);
   }
 
-  &__toggle:checked~&__btn>&__hamburger::after {
+  &__toggle:checked ~ &__btn > &__hamburger::after {
     top: 0;
     transform: rotate(90deg);
   }
 
-  &__toggle:checked~&__wrapper {
+  &__toggle:checked ~ &__wrapper {
     width: 100vw;
     height: 100vh;
-    opacity: 1;
-    transition: width 0.5s ease-out;
+    transition: width $animation-speed $animation-type;
   }
 
-  &__toggle:checked~&__wrapper .menu {
+  &__toggle:checked ~ &__wrapper .menu {
     display: flex;
+    opacity: 1;
+    transition: all $animation-speed $animation-type;
   }
 
-  &__toggle:checked~&__wrapper .social {
+  &__toggle:checked ~ &__wrapper .social {
     display: flex;
   }
 
   &__wrapper {
+    position: relative;
+    z-index: 5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,8 +90,11 @@
     width: 0;
     height: 0;
     padding-left: 128px;
-    opacity: 0;
-    background-color: $nav-open;
+    background: linear-gradient(
+      to right,
+      $nav-open 51vw,
+      rgba(21, 27, 31, 0.81) 51vw
+    );
     transition: width $animation-speed $animation-type;
   }
 }
@@ -100,6 +106,7 @@
   align-items: flex-start;
   justify-content: center;
   list-style: none;
+  opacity: 0;
   padding: 0;
   margin: 0;
 
@@ -140,6 +147,7 @@
 
 .langBtn {
   position: absolute;
+  z-index: 10;
   bottom: 22px;
   left: 12px;
   width: 40px;
