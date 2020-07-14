@@ -6,11 +6,22 @@
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: $max-mobile) {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    background: $nav-bg-color;
+    padding: 16px;
+  }
+
   &__copywrite {
     @include Roboto;
     font-size: 13px;
     line-height: 15px;
     color: $color-additional-dark;
+
+    @media (max-width: $max-mobile) {
+      color: $base-txt-color;
+    }
   }
 
   &__phone {
@@ -20,9 +31,19 @@
     text-decoration: none;
     color: $color-main;
 
+    @media (max-width: $max-mobile) {
+      color: $color-accent;
+      margin-bottom: 8px;
+    }
+
     &:hover,
     &:active {
       color: $color-accent;
+
+      @media (max-width: $max-mobile) {
+        color: $base-txt-color;
+      }
+
     }
   }
 }

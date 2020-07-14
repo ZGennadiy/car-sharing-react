@@ -11,6 +11,16 @@
   width: 64px;
   background-color: $nav-bg-color;
 
+  @media (min-width: $min-tablet) and (max-width: $max-tablet) {
+    width: 88px;
+  }
+
+  @media (max-width: $max-mobile) {
+    position: absolute;
+    background: none;
+    height: fit-content;
+  }
+
   &__toggle {
     display: none;
   }
@@ -21,11 +31,20 @@
     justify-content: center;
     position: absolute;
     top: 32px;
-    left: 16px;
+    left: 50%;
+    transform: translateX(-50%);
     height: 32px;
     width: 32px;
     cursor: pointer;
     z-index: 15;
+
+    @media (min-width: $min-tablet) and (max-width: $max-tablet) {
+      width: 40px;
+    }
+
+    @media (max-width: $max-mobile) {
+      top: 16px;
+    }
   }
 
   &__hamburger,
@@ -33,11 +52,20 @@
   &__hamburger::after {
     display: block;
     position: absolute;
-    width: 28px;
+    width: 32px;
     height: 3px;
     border-radius: 4px;
     transition-duration: $animation-speed;
     background-color: $base-txt-color;
+
+    @media (min-width: $min-tablet) and (max-width: $max-tablet) {
+      width: 40px;
+    }
+
+    @media (max-width: $max-mobile) {
+      width: 24px;
+      background-color: $color-main;
+    }
   }
 
   &__hamburger::before {
@@ -52,22 +80,63 @@
 
   &__toggle:checked ~ &__btn > &__hamburger {
     transform: rotate(45deg);
+
+    @media (max-width: $max-mobile) {
+      background-color: $base-txt-color;
+    }
   }
 
   &__toggle:checked ~ &__btn > &__hamburger::before {
     top: 0;
     transform: rotate(0);
+
+    @media (max-width: $max-mobile) {
+      background-color: $base-txt-color;
+    }
   }
 
   &__toggle:checked ~ &__btn > &__hamburger::after {
     top: 0;
     transform: rotate(90deg);
+
+    @media (max-width: $max-mobile) {
+      background-color: $base-txt-color;
+    }
   }
 
   &__toggle:checked ~ &__wrapper {
+    padding-left: 128px;
     width: 100vw;
     height: 100vh;
+    opacity: 1;
+    background: linear-gradient(
+      to right,
+      $nav-open 51vw,
+      rgba(21, 27, 31, 0.81) 51vw
+    );
     transition: width $animation-speed $animation-type;
+
+    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+      background: linear-gradient(
+        to left,
+        rgba(21, 27, 31, 0.81) 410px,
+        $nav-open 410px
+      );
+    }
+
+    @media (min-width: $min-tablet) and (max-width: $max-tablet) {
+      background: $nav-open;
+      padding-left: 96px;
+      transition: all $animation-speed $animation-type;
+    }
+
+    @media (max-width: $max-mobile) {
+      background: $nav-open;
+      padding-left: 32px;
+      padding-top: 80px;
+      justify-content: flex-start;
+      transition: all $animation-speed $animation-type;
+    }
   }
 
   &__toggle:checked ~ &__wrapper .menu {
@@ -79,23 +148,27 @@
   &__toggle:checked ~ &__wrapper .social {
     display: flex;
   }
+  &__toggle:checked ~ .langBtn {
+    @media (max-width: $max-mobile) {
+      display: block;
+    }
+  }
 
   &__wrapper {
     position: relative;
-    z-index: 5;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    width: 0;
-    height: 0;
-    padding-left: 128px;
-    background: linear-gradient(
-      to right,
-      $nav-open 51vw,
-      rgba(21, 27, 31, 0.81) 51vw
-    );
+    width: 100%;
+    height: 100%;
+    opacity: 0;
     transition: width $animation-speed $animation-type;
+
+    @media (max-width: $max-tablet) {
+      transition: all $animation-speed $animation-type;
+    }
   }
 }
 
@@ -116,6 +189,14 @@
     @include Roboto-medium;
     font-size: 32px;
     line-height: 2;
+
+    @media (min-width: $min-tablet) and (max-width: $max-tablet) {
+      font-size: 28px;
+    }
+
+    @media (max-width: $max-mobile) {
+      font-size: 22px;
+    }
   }
 
   &__link {
@@ -147,9 +228,10 @@
 
 .langBtn {
   position: absolute;
-  z-index: 10;
+  z-index: 5;
   bottom: 22px;
-  left: 12px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 40px;
   height: 40px;
   text-align: center;
@@ -161,6 +243,14 @@
   color: $color-accent;
   background: none;
   outline: none;
+
+  @media (max-width: $max-mobile) {
+    display: none;
+    left: 16px;
+    transform: none;
+    bottom: 16px;
+    z-index: 15;
+  }
 
   &:hover {
     color: $base-txt-color;

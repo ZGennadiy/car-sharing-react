@@ -29,6 +29,11 @@
     filter: saturate(0%);
   }
 
+  &_mainMobile {
+    width: 100%;
+    border-radius: 0;
+  }
+
   &_slide-green,
   &_slide-indigo,
   &_slide-crimson,

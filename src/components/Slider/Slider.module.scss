@@ -6,10 +6,22 @@
   position: relative;
   width: 50%;
 
+  @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+    width: 410px;
+  }
+
+  @media (max-width: $max-tablet) {
+    display: none;
+  }
+
   &__item {
     height: 100%;
     width: 100%;
     padding: 32px 96px 32px 96px;
+
+    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+      padding: 32px 64px 32px 64px;
+    }
   }
 
   &__slider0 {
@@ -74,6 +86,10 @@
     height: 100%;
     cursor: pointer;
 
+    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+      width: 32px;
+    }
+
     &:hover {
       background: rgba(14, 194, 97, 0.2);
     }
@@ -107,5 +123,4 @@
       background-color: $color-accent;
     }
   }
-
 }

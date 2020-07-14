@@ -5,6 +5,8 @@ import {Button} from '../Button/Button';
 import {Footer} from '../Footer/Footer';
 
 export const MainPage = () => {
+  const isMobileDevice = document.documentElement.clientWidth <= 767;
+
   return (
     <div className={styles.mainpage}>
       <Header />
@@ -16,7 +18,10 @@ export const MainPage = () => {
         <p className={styles.mainpage__descr}>
           Поминутная аренда авто твоего города
         </p>
-        <Button value="Забронировать" />
+        <Button
+          value="Забронировать"
+          btnModifier={isMobileDevice ? 'button_mainMobile' : ''}
+        />
       </main>
       <Footer />
     </div>

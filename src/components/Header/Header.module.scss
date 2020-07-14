@@ -6,6 +6,14 @@
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: $max-mobile) {
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-end;
+    padding-top: 16px;
+    padding-right: 16px;
+  }
+
   &__logo {
     @include Roboto-bold;
     color: $color-accent;
@@ -23,6 +31,10 @@
 
     &:hover .header__city {
       color: $color-accent;
+    }
+
+    @media (max-width: $max-mobile) {
+      margin-top: 8px;
     }
   }
 
