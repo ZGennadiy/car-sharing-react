@@ -1,7 +1,6 @@
 import React from 'react';
 import {Navbar} from './components/Navbar/Navbar';
-import {MainPage} from './components/MainPage/MainPage';
-import {Slider} from './components/Slider/Slider';
+import {MainPage} from './pages/MainPage/MainPage';
 import './App.css';
 
 function App() {
@@ -9,7 +8,6 @@ function App() {
     <div className="App">
       <Navbar />
       <MainPage />
-      <Slider />
     </div>
   );
 }
