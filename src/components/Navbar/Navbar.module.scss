@@ -78,7 +78,7 @@
     top: 8px;
   }
 
-  &__toggle:checked ~ &__btn > &__hamburger {
+  &__toggle:checked~&__btn>&__hamburger {
     transform: rotate(45deg);
 
     @media (max-width: $max-mobile) {
@@ -86,7 +86,7 @@
     }
   }
 
-  &__toggle:checked ~ &__btn > &__hamburger::before {
+  &__toggle:checked~&__btn>&__hamburger::before {
     top: 0;
     transform: rotate(0);
 
@@ -95,7 +95,7 @@
     }
   }
 
-  &__toggle:checked ~ &__btn > &__hamburger::after {
+  &__toggle:checked~&__btn>&__hamburger::after {
     top: 0;
     transform: rotate(90deg);
 
@@ -104,30 +104,56 @@
     }
   }
 
-  &__toggle:checked ~ &__wrapper {
-    padding-left: 128px;
+  &__toggle:checked~&__wrapper {
     width: 100vw;
     height: 100vh;
-    opacity: 1;
-    background: linear-gradient(
-      to right,
-      $nav-open 51vw,
-      rgba(21, 27, 31, 0.81) 51vw
-    );
-    transition: width $animation-speed $animation-type;
+    background: linear-gradient(to right,
+        $nav-open 50.1vw,
+        rgba(21, 27, 31, 0.81) 50.1vw);
+    transform: translateX(0);
+    transition: transform $animation-speed $animation-type;
 
     @media (min-width: $min-desktop) and (max-width: $max-desktop) {
-      background: linear-gradient(
-        to left,
-        rgba(21, 27, 31, 0.81) 410px,
-        $nav-open 410px
-      );
+      background: linear-gradient(to left,
+          rgba(21, 27, 31, 0.81) 410px,
+          $nav-open 410px);
     }
 
-    @media (min-width: $min-tablet) and (max-width: $max-tablet) {
+    @media (max-width: $max-tablet) {
+      background: $nav-open;
+    }
+  }
+
+  &__toggle:checked~.langBtn {
+    z-index: 5;
+
+    @media (max-width: $max-mobile) {
+      display: block;
+      opacity: 1;
+      z-index: 15;
+      transition: opacity $animation-speed $animation-type;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    left: 0;
+    transform: translateX(-100%);
+    padding: 128px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    background: $nav-open;
+    transition: transform $animation-speed $animation-type;
+
+    @media (max-width: $max-tablet) {
       background: $nav-open;
       padding-left: 96px;
-      transition: all $animation-speed $animation-type;
+      transition: transform $animation-speed $animation-type;
     }
 
     @media (max-width: $max-mobile) {
@@ -135,53 +161,17 @@
       padding-left: 32px;
       padding-top: 80px;
       justify-content: flex-start;
-      transition: all $animation-speed $animation-type;
-    }
-  }
-
-  &__toggle:checked ~ &__wrapper .menu {
-    display: flex;
-    opacity: 1;
-    transition: all $animation-speed $animation-type;
-  }
-
-  &__toggle:checked ~ &__wrapper .social {
-    display: flex;
-  }
-  &__toggle:checked ~ .langBtn {
-    z-index: 5;
-    @media (max-width: $max-mobile) {
-      display: block;
-      z-index: 15;
-    }
-  }
-
-  &__wrapper {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: width $animation-speed $animation-type;
-
-    @media (max-width: $max-tablet) {
-      transition: all $animation-speed $animation-type;
     }
   }
 }
 
 .menu {
-  display: none;
+  display: flex;
   position: relative;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   list-style: none;
-  opacity: 0;
   padding: 0;
   margin: 0;
 
@@ -212,7 +202,7 @@
 }
 
 .social {
-  display: none;
+  display: flex;
   position: absolute;
   bottom: -40px;
   justify-content: space-between;
@@ -248,9 +238,12 @@
 
   @media (max-width: $max-mobile) {
     display: none;
+    opacity: 0;
     left: 16px;
     transform: none;
     bottom: 16px;
+    transition: opacity $animation-speed $animation-type;
+
   }
 
   &:hover {
