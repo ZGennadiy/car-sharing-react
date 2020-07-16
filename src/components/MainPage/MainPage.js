@@ -5,7 +5,9 @@ import {Button} from '../Button/Button';
 import {Footer} from '../Footer/Footer';
 
 export const MainPage = () => {
-  const isMobileDevice = document.documentElement.clientWidth <= 767;
+  const maxWidthMobileScreen = 767;
+  const isMobileDevice =
+    document.documentElement.clientWidth <= maxWidthMobileScreen;
 
   return (
     <div className={styles.mainpage}>
