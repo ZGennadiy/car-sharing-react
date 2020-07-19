@@ -1,14 +1,21 @@
 import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Navbar} from './components/Navbar/Navbar';
 import {MainPage} from './pages/MainPage/MainPage';
+import {OrderPage} from './pages/OrderPage/OrderPage';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <MainPage />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={MainPage} />
+          <Route exact path="/order" component={OrderPage} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

@@ -16,9 +16,14 @@
 
   &__logo {
     @include Roboto-bold;
-    color: $color-accent;
     font-size: 30px;
     line-height: 35px;
+  }
+
+  &__linkHome {
+    color: $color-accent;
+    cursor: pointer;
+    text-decoration: none;
   }
 
   &__location {
