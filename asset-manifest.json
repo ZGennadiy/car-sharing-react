@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/car-sharing-react/static/css/main.3bad0a0c.chunk.css",
-    "main.js": "/car-sharing-react/static/js/main.8d49d992.chunk.js",
-    "main.js.map": "/car-sharing-react/static/js/main.8d49d992.chunk.js.map",
+    "main.css": "/car-sharing-react/static/css/main.828f7e11.chunk.css",
+    "main.js": "/car-sharing-react/static/js/main.69d7914d.chunk.js",
+    "main.js.map": "/car-sharing-react/static/js/main.69d7914d.chunk.js.map",
     "runtime-main.js": "/car-sharing-react/static/js/runtime-main.69c2c0a1.js",
     "runtime-main.js.map": "/car-sharing-react/static/js/runtime-main.69c2c0a1.js.map",
     "static/css/2.764ccc25.chunk.css": "/car-sharing-react/static/css/2.764ccc25.chunk.css",
     "static/js/2.aa1ffd8f.chunk.js": "/car-sharing-react/static/js/2.aa1ffd8f.chunk.js",
     "static/js/2.aa1ffd8f.chunk.js.map": "/car-sharing-react/static/js/2.aa1ffd8f.chunk.js.map",
     "index.html": "/car-sharing-react/index.html",
-    "precache-manifest.41e6498ec91d8aee17a299a660f2f352.js": "/car-sharing-react/precache-manifest.41e6498ec91d8aee17a299a660f2f352.js",
+    "precache-manifest.b11de60c7d9ac321c880e6dc22fa7875.js": "/car-sharing-react/precache-manifest.b11de60c7d9ac321c880e6dc22fa7875.js",
     "service-worker.js": "/car-sharing-react/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/car-sharing-react/static/css/2.764ccc25.chunk.css.map",
-    "static/css/main.3bad0a0c.chunk.css.map": "/car-sharing-react/static/css/main.3bad0a0c.chunk.css.map",
+    "static/css/main.828f7e11.chunk.css.map": "/car-sharing-react/static/css/main.828f7e11.chunk.css.map",
     "static/js/2.aa1ffd8f.chunk.js.LICENSE.txt": "/car-sharing-react/static/js/2.aa1ffd8f.chunk.js.LICENSE.txt",
-    "static/media/OrderPage.module.scss": "/car-sharing-react/static/media/Roboto-Regular.9feb0110.woff2",
+    "static/media/Footer.module.scss": "/car-sharing-react/static/media/Roboto-Regular.9feb0110.woff2",
     "static/media/Slider.module.scss": "/car-sharing-react/static/media/slide4-bg.70859b0b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.69c2c0a1.js",
     "static/css/2.764ccc25.chunk.css",
     "static/js/2.aa1ffd8f.chunk.js",
-    "static/css/main.3bad0a0c.chunk.css",
-    "static/js/main.8d49d992.chunk.js"
+    "static/css/main.828f7e11.chunk.css",
+    "static/js/main.69d7914d.chunk.js"
   ]
 }
