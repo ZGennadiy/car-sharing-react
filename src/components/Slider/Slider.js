@@ -5,6 +5,7 @@ import {Button} from '../Button/Button';
 
 export const Slider = () => {
   const [slideIndex, setSlideIndex] = useState('0');
+
   const slides = [
     {
       className: styles.slider__slider0,
@@ -35,7 +36,7 @@ export const Slider = () => {
 
   const getNextSlide = () => {
     const nextIndex = Number(slideIndex) + 1;
-    setSlideIndex(nextIndex === slides.length ? 0 : nextIndex);
+    setSlideIndex(nextIndex >= slides.length ? 0 : nextIndex);
   };
 
   const getPrevSlide = () => {
@@ -50,14 +51,28 @@ export const Slider = () => {
 
   const dotColl = new Array(slides.length).fill(document.createElement('div'));
 
-  const {className, heading, descr, btnModifier} = slides[slideIndex];
+  // const autoScrolling = (time) => {
+  //   setInterval(getNextSlide, time);
+  // };
+
+  // autoScrolling(3000);
 
   return (
     <div className={styles.slider}>
-      <div className={`${styles.slider__item} ${className}`}>
-        <h2 className={styles.slider__h2}>{heading}</h2>
-        <p className={styles.slider__descr}>{descr}</p>
-        <Button value="Подробнее" btnModifier={btnModifier} />
+      <div
+        className={styles.slider__container}
+        style={{left: -100 * slideIndex + '%'}}
+      >
+        {slides.map((slide, index) => (
+          <div
+            key={String(index)}
+            className={`${styles.slider__item} ${slide.className}`}
+          >
+            <h2 className={styles.slider__h2}>{slide.heading}</h2>
+            <p className={styles.slider__descr}>{slide.descr}</p>
+            <Button value="Подробнее" btnModifier={slide.btnModifier} />
+          </div>
+        ))}
       </div>
 
       <div className={styles.slider__prevSlideBtn} onClick={getPrevSlide}>
