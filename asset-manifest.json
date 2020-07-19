@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/car-sharing-react/static/css/main.828f7e11.chunk.css",
-    "main.js": "/car-sharing-react/static/js/main.69d7914d.chunk.js",
-    "main.js.map": "/car-sharing-react/static/js/main.69d7914d.chunk.js.map",
+    "main.js": "/car-sharing-react/static/js/main.6001e8cc.chunk.js",
+    "main.js.map": "/car-sharing-react/static/js/main.6001e8cc.chunk.js.map",
     "runtime-main.js": "/car-sharing-react/static/js/runtime-main.69c2c0a1.js",
     "runtime-main.js.map": "/car-sharing-react/static/js/runtime-main.69c2c0a1.js.map",
     "static/css/2.764ccc25.chunk.css": "/car-sharing-react/static/css/2.764ccc25.chunk.css",
     "static/js/2.aa1ffd8f.chunk.js": "/car-sharing-react/static/js/2.aa1ffd8f.chunk.js",
     "static/js/2.aa1ffd8f.chunk.js.map": "/car-sharing-react/static/js/2.aa1ffd8f.chunk.js.map",
     "index.html": "/car-sharing-react/index.html",
-    "precache-manifest.b11de60c7d9ac321c880e6dc22fa7875.js": "/car-sharing-react/precache-manifest.b11de60c7d9ac321c880e6dc22fa7875.js",
+    "precache-manifest.882321a8addfee4ae0b42c7616b5fb39.js": "/car-sharing-react/precache-manifest.882321a8addfee4ae0b42c7616b5fb39.js",
     "service-worker.js": "/car-sharing-react/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/car-sharing-react/static/css/2.764ccc25.chunk.css.map",
     "static/css/main.828f7e11.chunk.css.map": "/car-sharing-react/static/css/main.828f7e11.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.764ccc25.chunk.css",
     "static/js/2.aa1ffd8f.chunk.js",
     "static/css/main.828f7e11.chunk.css",
-    "static/js/main.69d7914d.chunk.js"
+    "static/js/main.6001e8cc.chunk.js"
   ]
 }
