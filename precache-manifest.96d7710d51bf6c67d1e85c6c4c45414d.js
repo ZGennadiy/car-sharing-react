@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7cef2b7ef24d2bf295d859aedf65e555",
+    "revision": "56c3ba3fc227ec615fc22bddbb4b8fdc",
     "url": "/car-sharing-react/index.html"
   },
   {
-    "revision": "66a155023acc7f34b57a",
+    "revision": "79fce2389d3464b771f2",
     "url": "/car-sharing-react/static/css/2.764ccc25.chunk.css"
   },
   {
-    "revision": "5060af0c94ecd6ff2eb0",
-    "url": "/car-sharing-react/static/css/main.828f7e11.chunk.css"
+    "revision": "0e09299806ccfeecdb5d",
+    "url": "/car-sharing-react/static/css/main.218c30a8.chunk.css"
   },
   {
-    "revision": "66a155023acc7f34b57a",
-    "url": "/car-sharing-react/static/js/2.aa1ffd8f.chunk.js"
+    "revision": "79fce2389d3464b771f2",
+    "url": "/car-sharing-react/static/js/2.7136fb01.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/car-sharing-react/static/js/2.aa1ffd8f.chunk.js.LICENSE.txt"
+    "url": "/car-sharing-react/static/js/2.7136fb01.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5060af0c94ecd6ff2eb0",
-    "url": "/car-sharing-react/static/js/main.6001e8cc.chunk.js"
+    "revision": "0e09299806ccfeecdb5d",
+    "url": "/car-sharing-react/static/js/main.a01b0d51.chunk.js"
   },
   {
     "revision": "1c30a063fd1da1ff254d",
@@ -74,6 +74,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9feb0110b6dff9ee2b9ebd17f7a1aee6",
     "url": "/car-sharing-react/static/media/Roboto-Regular.9feb0110.woff2"
+  },
+  {
+    "revision": "114009ec73c16f57e5000a637ea9d68d",
+    "url": "/car-sharing-react/static/media/map.114009ec.jpg"
   },
   {
     "revision": "20d1598ecce51bbfc287186db935909f",
