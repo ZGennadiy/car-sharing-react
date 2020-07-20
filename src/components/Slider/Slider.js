@@ -49,8 +49,6 @@ export const Slider = () => {
     target.className = `${styles.slider__dotsItem} ${styles.slider__dotsItem_active}`;
   };
 
-  const dotColl = new Array(slides.length).fill(document.createElement('div'));
-
   // const autoScrolling = (time) => {
   //   setInterval(getNextSlide, time);
   // };
@@ -83,7 +81,7 @@ export const Slider = () => {
       </div>
 
       <div className={styles.slider__dots}>
-        {dotColl.map((dot, i) => {
+        {slides.map((dot, i) => {
           const classList =
             i === Number(slideIndex)
               ? `${styles.slider__dotsItem} ${styles.slider__dotsItem_active}`

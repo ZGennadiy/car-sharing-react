@@ -6,18 +6,20 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 32px 64px 32px 64px;
-
-  @media (min-width: $min-desktop) and (max-width: $max-desktop) {
-    padding: 32px 32px 32px 32px;
-  }
-
-  @media (max-width: $max-mobile) {
-    padding: 0;
-  }
 
   &__mainContent {
     flex-grow: 1;
+    padding-left: 64px;
+    padding-right: 64px;
+
+    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    @media (max-width: $max-mobile) {
+      padding: 0;
+    }
   }
 
   &__h1 {

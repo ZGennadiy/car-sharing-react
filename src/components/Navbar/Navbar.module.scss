@@ -3,7 +3,8 @@
 @import '../../assets/mixins';
 
 .navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +19,6 @@
   @media (max-width: $max-mobile) {
     position: absolute;
     background: none;
-    height: fit-content;
   }
 
   &__toggle {

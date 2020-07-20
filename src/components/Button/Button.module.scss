@@ -26,7 +26,7 @@
   }
 
   &:disabled {
-    filter: saturate(0%);
+    background: $color-additional-light;
   }
 
   &_mainMobile {

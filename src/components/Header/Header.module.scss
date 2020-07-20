@@ -5,6 +5,11 @@
 .header {
   display: flex;
   justify-content: space-between;
+  padding: 32px 64px 32px 64px;
+
+  @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+    padding: 32px 32px 32px 32px;
+  }
 
   @media (max-width: $max-mobile) {
     flex-direction: column;
