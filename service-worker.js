@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/car-sharing-react/precache-manifest.96d7710d51bf6c67d1e85c6c4c45414d.js"
+  "/car-sharing-react/precache-manifest.75d95a57a22c7ca04a260ca23dbaa39b.js"
 );
 
 self.addEventListener('message', (event) => {
