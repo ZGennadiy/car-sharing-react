@@ -19,7 +19,7 @@ export const MainPage = () => (
           Поминутная аренда авто твоего города
         </p>
         <Link to="/order">
-          <Button value="Забронировать" btnModifier="button_mainMobile" />
+          <Button value="Забронировать" btnModifier="button_mobileFullWidth" />
         </Link>
       </main>
       <Footer />

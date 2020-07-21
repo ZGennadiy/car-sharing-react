@@ -1,45 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './OrderPage.module.scss';
 import {Header} from '../../components/Header/Header';
-import map from '../../assets/img/map.jpg';
+import {Breadcrumbs} from '../../components/Breadcrumbs/Breadcrumbs';
 import {Button} from '../../components/Button/Button';
+import map from '../../assets/img/map.jpg';
 
 export const OrderPage = () => {
+  const [order, setOrder] = useState({
+    stepOrder: 1,
+  });
+
+  const goNextStep = ({stepOrder}) =>
+    setOrder({...order, stepOrder: stepOrder + 1});
+
   return (
     <>
       <div className={styles.orderpage}>
         <Header />
         <main className={styles.orderpage__mainContent}>
-          <ul className={styles.orderpage__breadcrumbs}>
-            <li className={styles.orderpage__crumb}>
-              <a className={styles.orderpage__crumbLink} href="#location">
-                Местоположение
-              </a>
-            </li>
-            <li className={styles.orderpage__crumb}>
-              <a className={styles.orderpage__crumbLink} disabled href="#car">
-                Модель
-              </a>
-            </li>
-            <li className={styles.orderpage__crumb}>
-              <a
-                className={styles.orderpage__crumbLink}
-                disabled
-                href="#options"
-              >
-                Дополнительно
-              </a>
-            </li>
-            <li className={styles.orderpage__crumb}>
-              <a
-                className={styles.orderpage__crumbLink}
-                disabled
-                href="#summary"
-              >
-                Итого
-              </a>
-            </li>
-          </ul>
+          <Breadcrumbs step={order.stepOrder} />
           <div className={styles.orderpage__container}>
             <section className={styles.orderpage__orderMake}>
               <div className={styles.orderpage__choiceLocation}>
@@ -82,7 +61,11 @@ export const OrderPage = () => {
                   от 8 000 до 12 000 ₽
                 </span>
               </p>
-              <Button value="Выбрать модель" disabled />
+              <Button
+                value="Выбрать модель"
+                btnModifier="button_mobileFullWidth"
+                onClick={() => goNextStep(order)}
+              />
             </section>
           </div>
         </main>

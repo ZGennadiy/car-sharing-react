@@ -11,9 +11,8 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route exact path="/" component={MainPage} />
+          <Route exact path="/car-sharing-react" component={MainPage} />
           <Route exact path="/order" component={OrderPage} />
-          <Route component={MainPage} />
         </Switch>
       </div>
     </Router>

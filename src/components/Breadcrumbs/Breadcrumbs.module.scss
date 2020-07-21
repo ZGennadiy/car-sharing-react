@@ -1,0 +1,58 @@
+@import '../../assets/fonts/fonts';
+@import '../../assets/variables';
+@import '../../assets/mixins';
+
+.breadcrumbs {
+  margin-top: 8px;
+  margin-bottom: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  list-style: none;
+  border-top: 1px solid $color-additional-light;
+  border-bottom: 1px solid $color-additional-light;
+  padding-left: 64px;
+  padding-right: 64px;
+
+  @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media (max-width: $max-mobile) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &__crumb {
+    position: relative;
+    @include Roboto-bold;
+    font-size: 14px;
+    line-height: 16px;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+
+      &::after {
+        content: '\25BA';
+        position: absolute;
+        right: -28px;
+        color: $color-additional-dark;
+      }
+    }
+  }
+
+  &__crumbLink {
+    color: $color-accent;
+    text-decoration: none;
+
+    &_prevStep {
+      color: $color-main;
+    }
+  }
+
+  &__crumbLink[disabled] {
+    color: $color-additional-dark;
+  }
+}

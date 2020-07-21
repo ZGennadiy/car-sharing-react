@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
-        <Link className={styles.header__linkHome} to="/">
+        <Link className={styles.header__linkHome} to="/car-sharing-react">
           Need for drive
         </Link>
       </div>

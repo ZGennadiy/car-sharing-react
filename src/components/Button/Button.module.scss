@@ -29,7 +29,7 @@
     background: $color-additional-light;
   }
 
-  &_mainMobile {
+  &_mobileFullWidth {
     @media (max-width: $max-mobile) {
       width: 100%;
       border-radius: 0;
