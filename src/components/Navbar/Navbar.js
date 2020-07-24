@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useLocation} from 'react-router-dom';
 import styles from './Navbar.module.scss';
 import {
   FacebookIcon,
@@ -8,6 +9,7 @@ import {
 
 export const Navbar = () => {
   const [lang, setLang] = useState('Рус');
+  const {pathname} = useLocation();
 
   return (
     <div className={styles.navbar}>
@@ -19,7 +21,13 @@ export const Navbar = () => {
       <label className={styles.navbar__btn} htmlFor="navbarToggle">
         <span className={styles.navbar__hamburger}> </span>
       </label>
-      <nav className={styles.navbar__wrapper}>
+      <nav
+        className={
+          pathname !== '/car-sharing-react'
+            ? styles.navbar__wrapper
+            : `${styles.navbar__wrapper} ${styles.navbar__wrapper_mainPage}`
+        }
+      >
         <ul className={styles.menu}>
           <li className={styles.menu__item}>
             <a href="#parking" className={styles.menu__link}>

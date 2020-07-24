@@ -79,7 +79,7 @@
     top: 8px;
   }
 
-  &__toggle:checked~&__btn>&__hamburger {
+  &__toggle:checked ~ &__btn > &__hamburger {
     transform: rotate(45deg);
 
     @media (max-width: $max-mobile) {
@@ -87,7 +87,7 @@
     }
   }
 
-  &__toggle:checked~&__btn>&__hamburger::before {
+  &__toggle:checked ~ &__btn > &__hamburger::before {
     top: 0;
     transform: rotate(0);
 
@@ -96,7 +96,7 @@
     }
   }
 
-  &__toggle:checked~&__btn>&__hamburger::after {
+  &__toggle:checked ~ &__btn > &__hamburger::after {
     top: 0;
     transform: rotate(90deg);
 
@@ -105,27 +105,35 @@
     }
   }
 
-  &__toggle:checked~&__wrapper {
+  &__toggle:checked ~ &__wrapper {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right,
-        $nav-open 50.1vw,
-        rgba(21, 27, 31, 0.81) 50.1vw);
+    background: $nav-open;
     transform: translateX(0);
     transition: transform $animation-speed $animation-type;
 
-    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
-      background: linear-gradient(to left,
-          rgba(21, 27, 31, 0.81) 410px,
-          $nav-open 410px);
-    }
+    &_mainPage {
+      background: linear-gradient(
+        to right,
+        $nav-open 50.1vw,
+        rgba(21, 27, 31, 0.81) 50.1vw
+      );
 
-    @media (max-width: $max-tablet) {
-      background: $nav-open;
+      @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+        background: linear-gradient(
+          to left,
+          rgba(21, 27, 31, 0.81) 410px,
+          $nav-open 410px
+        );
+      }
+
+      @media (max-width: $max-tablet) {
+        background: $nav-open;
+      }
     }
   }
 
-  &__toggle:checked~.langBtn {
+  &__toggle:checked ~ .langBtn {
     z-index: 5;
 
     @media (max-width: $max-mobile) {
@@ -244,7 +252,6 @@
     transform: none;
     bottom: 16px;
     transition: opacity $animation-speed $animation-type;
-
   }
 
   &:hover {

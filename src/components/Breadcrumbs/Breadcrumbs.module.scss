@@ -7,8 +7,9 @@
   margin-bottom: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  height: 32px;
+  min-height: 32px;
   list-style: none;
   border-top: 1px solid $color-additional-light;
   border-bottom: 1px solid $color-additional-light;
@@ -30,6 +31,8 @@
     @include Roboto-bold;
     font-size: 14px;
     line-height: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 
     &:not(:last-child) {
       margin-right: 40px;

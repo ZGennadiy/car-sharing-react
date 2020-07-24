@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {ArrowLeftIcon, ArrowRightIcon} from '../../assets/icons/icons';
 import styles from './Slider.module.scss';
 import {Button} from '../Button/Button';
@@ -49,11 +49,26 @@ export const Slider = () => {
     target.className = `${styles.slider__dotsItem} ${styles.slider__dotsItem_active}`;
   };
 
-  // const autoScrolling = (time) => {
-  //   setInterval(getNextSlide, time);
-  // };
+  const useInterval = (callback, delay) => {
+    const savedCallback = useRef();
 
-  // autoScrolling(3000);
+    useEffect(() => {
+      savedCallback.current = callback;
+    });
+
+    useEffect(() => {
+      const tick = () => {
+        savedCallback.current();
+      };
+
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }, [delay]);
+  };
+
+  useInterval(() => {
+    getNextSlide();
+  }, 3000);
 
   return (
     <div className={styles.slider}>
