@@ -1,0 +1,232 @@
+@import '../../assets/fonts/fonts';
+@import '../../assets/variables';
+@import '../../assets/mixins';
+
+.orderpage {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &__mainContent {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__breadcrumbs {
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    list-style: none;
+    border-top: 1px solid $color-additional-light;
+    border-bottom: 1px solid $color-additional-light;
+    padding-left: 64px;
+    padding-right: 64px;
+
+    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    @media (max-width: $max-mobile) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &__crumb {
+    position: relative;
+    @include Roboto-bold;
+    font-size: 14px;
+    line-height: 16px;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+
+      &::after {
+        content: '\25BA';
+        position: absolute;
+        right: -28px;
+        color: $color-additional-dark;
+      }
+    }
+  }
+
+  &__crumbLink {
+    color: $color-accent;
+    text-decoration: none;
+
+    &_prevStep {
+      color: $color-main;
+    }
+  }
+
+  &__crumbLink[disabled] {
+    color: $color-additional-dark;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-bottom: 64px;
+
+    @media (max-width: 1150px) {
+      flex-direction: column;
+    }
+
+    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-bottom: 32px;
+    }
+
+    @media (max-width: $max-mobile) {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  &__orderMake {
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+    min-height: fit-content;
+  }
+
+  &__choiceLocation {
+    @include Roboto-light;
+    color: $color-main;
+    font-size: 14px;
+    line-height: 16px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media (max-width: $max-mobile) {
+      width: 288px;
+    }
+  }
+
+  &__input {
+    position: relative;
+    margin-left: 8px;
+    padding-left: 8px;
+    width: 216px;
+    height: 24px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid $color-main;
+
+    @media (max-width: $max-mobile) {
+      width: 184px;
+    }
+
+    &::placeholder {
+      color: $color-additional-dark;
+    }
+
+    &::after {
+      content: '\2716';
+      position: absolute;
+      right: 8px;
+      color: $color-main;
+    }
+  }
+
+  &__map {
+    margin-top: 40px;
+    max-width: 100%;
+    @include Roboto-light;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-main;
+
+    &>p {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    &>img {
+      width: 100%;
+    }
+  }
+
+  &__orderState {
+    padding-top: 32px;
+    padding-left: 32px;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid $color-additional-light;
+
+    @media (max-width: 1150px) {
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+
+  &__h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    @include Roboto-medium;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: right;
+
+    @media (max-width: 1150px) {
+      text-align: left;
+    }
+  }
+
+  &__detailes {
+    @include Roboto-light;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__orderOption {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  &__optionName {
+    margin: 0;
+    color: $color-main;
+  }
+
+  &__optionDivider {
+    flex-grow: 1;
+    border-bottom: 1px dotted $color-additional-dark;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  &__optionValue {
+    margin: 0;
+    max-width: 104px;
+    color: $color-additional-dark;
+  }
+
+  &__price {
+    @include Roboto-medium;
+    font-size: 16px;
+    line-height: 16px;
+    color: $color-main;
+  }
+
+  &__priceValue {
+    @include Roboto;
+  }
+}
