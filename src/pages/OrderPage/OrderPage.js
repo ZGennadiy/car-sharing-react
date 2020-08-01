@@ -3,7 +3,8 @@ import styles from './OrderPage.module.scss';
 import {OrderContext} from '../../context/OrderContext';
 import {Header} from '../../components/Header/Header';
 import {Breadcrumbs} from '../../components/Breadcrumbs/Breadcrumbs';
-import {OrderStep1, OrderStep2} from '../../components/OrderSteps/OrderSteps';
+// import {OrderStep1} from '../../components/OrderSteps/OrderStep1';
+import {OrderStep2} from '../../components/OrderSteps/OrderStep2';
 import {OrderState} from '../../components/OrderSteps/OrderState';
 
 export const OrderPage = () => {
@@ -22,6 +23,7 @@ export const OrderPage = () => {
           <Breadcrumbs />
           <div className={styles.orderpage__container}>
             <section className={styles.orderpage__orderMake}>
+              {/* <OrderStep1 /> */}
               <OrderStep2 />
             </section>
             <OrderState />

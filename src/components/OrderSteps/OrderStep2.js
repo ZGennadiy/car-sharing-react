@@ -1,39 +1,11 @@
 import React from 'react';
 import styles from './OrderSteps.module.scss';
-import map from '../../assets/img/map.jpg';
 import imgElantra from '../../assets/img/cars/elantra.png';
 import imgI30 from '../../assets/img/cars/i30n.png';
 import imgCreta from '../../assets/img/cars/creta.png';
 import imgSonata from '../../assets/img/cars/sonata.png';
 import imgMercedes from '../../assets/img/cars/mercedes.png';
 import imgAudi from '../../assets/img/cars/audi.png';
-
-export const OrderStep1 = () => (
-  <>
-    <div className={styles.orderpage__choiceLocation}>
-      <label>
-        Город
-        <input
-          className={styles.orderpage__input}
-          placeholder="Начните вводить город ..."
-          type="text"
-        />
-      </label>
-      <label>
-        Пункт выдачи
-        <input
-          className={styles.orderpage__input}
-          placeholder="Начните вводить пункт ..."
-          type="text"
-        />
-      </label>
-    </div>
-    <div className={styles.orderpage__map}>
-      <p>Выберите на карте:</p>
-      <img src={map} alt="map" />
-    </div>
-  </>
-);
 
 export const OrderStep2 = () => {
   const categories = [
@@ -83,11 +55,11 @@ export const OrderStep2 = () => {
 
   return (
     <>
-      <form className={styles.carFilter}>
+      <div className={styles.radioInputs}>
         {categories.map(({value, txt, defaultChecked}, index) => (
-          <label key={String(index)} className={styles.carFilter__label}>
+          <label key={String(index)} className={styles.radioInputs__label}>
             <input
-              className={styles.carFilter__radio}
+              className={styles.radioInputs__input}
               name="carClassFilter"
               type="radio"
               defaultChecked={defaultChecked}
@@ -96,26 +68,30 @@ export const OrderStep2 = () => {
             <span>{txt}</span>
           </label>
         ))}
-      </form>
+      </div>
       <div className={styles.catalogue}>
         {cars.map(({model, categorie, price, imgPath}, index) => (
-          <div
-            key={String(index)}
-            className={styles.catalogue__car}
-            datacategorie={categorie}
-          >
-            <div className={styles.catalogue__aboutCar}>
-              <p className={styles.catalogue__model}>{model}</p>
-              <p className={styles.catalogue__price}>{price}</p>
+          <label key={String(index)} datacategorie={categorie}>
+            <input
+              className={styles.catalogue__carInput}
+              type="radio"
+              name="car"
+              value={model}
+            />
+            <div className={styles.catalogue__car}>
+              <div className={styles.catalogue__aboutCar}>
+                <p className={styles.catalogue__model}>{model}</p>
+                <p className={styles.catalogue__price}>{price}</p>
+              </div>
+              <div className={styles.catalogue__view}>
+                <img
+                  src={imgPath}
+                  alt={model}
+                  className={styles.catalogue__img}
+                />
+              </div>
             </div>
-            <div className={styles.catalogue__view}>
-              <img
-                src={imgPath}
-                alt={model}
-                className={styles.catalogue__img}
-              />
-            </div>
-          </div>
+          </label>
         ))}
       </div>
     </>

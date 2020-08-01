@@ -3,104 +3,6 @@
 @import '../../assets/mixins';
 
 .orderpage {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-
-  &__mainContent {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__breadcrumbs {
-    margin-top: 8px;
-    margin-bottom: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    height: 32px;
-    list-style: none;
-    border-top: 1px solid $color-additional-light;
-    border-bottom: 1px solid $color-additional-light;
-    padding-left: 64px;
-    padding-right: 64px;
-
-    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
-      padding-left: 32px;
-      padding-right: 32px;
-    }
-
-    @media (max-width: $max-mobile) {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-  }
-
-  &__crumb {
-    position: relative;
-    @include Roboto-bold;
-    font-size: 14px;
-    line-height: 16px;
-
-    &:not(:last-child) {
-      margin-right: 40px;
-
-      &::after {
-        content: '\25BA';
-        position: absolute;
-        right: -28px;
-        color: $color-additional-dark;
-      }
-    }
-  }
-
-  &__crumbLink {
-    color: $color-accent;
-    text-decoration: none;
-
-    &_prevStep {
-      color: $color-main;
-    }
-  }
-
-  &__crumbLink[disabled] {
-    color: $color-additional-dark;
-  }
-
-  &__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-grow: 1;
-    padding-left: 64px;
-    padding-right: 64px;
-    padding-bottom: 64px;
-
-    @media (max-width: 1150px) {
-      flex-direction: column;
-    }
-
-    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
-      padding-left: 32px;
-      padding-right: 32px;
-      padding-bottom: 32px;
-    }
-
-    @media (max-width: $max-mobile) {
-      padding-left: 16px;
-      padding-right: 16px;
-      padding-bottom: 16px;
-    }
-  }
-
-  &__orderMake {
-    display: flex;
-    flex-direction: column;
-    padding-top: 32px;
-    min-height: fit-content;
-  }
-
   &__choiceLocation {
     @include Roboto-light;
     color: $color-main;
@@ -151,12 +53,12 @@
     line-height: 16px;
     color: $color-main;
 
-    &>p {
+    & > p {
       margin-top: 0;
       margin-bottom: 16px;
     }
 
-    &>img {
+    & > img {
       width: 100%;
     }
   }
@@ -231,39 +133,40 @@
   }
 }
 
-.carFilter {
-  &__label>&__radio {
+.radioInputs {
+  &__label > &__input {
     position: absolute;
     z-index: -1;
     opacity: 0;
 
-    &:not(:disabled):active+span::before {
+    &:not(:disabled):active + span::before {
       box-shadow: inset 0 0 4px 0.2rem $color-accent;
     }
 
-    &:focus+span::before {
+    &:focus + span::before {
       box-shadow: inset 0 0 3px 0.2rem $color-accent;
     }
 
-    &:checked+span::before {
+    &:checked + span::before {
       box-shadow: inset 0 0 0 0.2rem $color-accent;
     }
 
-    &:checked+span {
+    &:checked + span {
       color: $color-main;
     }
   }
 
-  &__label>span {
+  &__label > span {
     cursor: pointer;
     margin: 0px 8px;
     display: inline-flex;
     align-items: center;
     user-select: none;
     color: $color-additional-dark;
+    transition: all $animation-speed $animation-type;
 
     &::before {
-      content: "";
+      content: '';
       cursor: pointer;
       display: inline-block;
       width: 12px;
@@ -277,15 +180,25 @@
       background-repeat: no-repeat;
       background-position: center center;
       background-size: 50% 50%;
+      transition: all $animation-speed $animation-type;
     }
   }
 }
 
 .catalogue {
   padding-top: 48px;
+  max-width: 738px;
   display: flex;
   flex-wrap: wrap;
   @include Roboto;
+
+  & > label {
+    flex-grow: 1;
+  }
+
+  &__carInput {
+    display: none;
+  }
 
   &__car {
     display: flex;
@@ -294,13 +207,17 @@
     justify-content: space-between;
     padding: 16px;
     cursor: pointer;
-    width: 369px;
     min-height: 224px;
     border: 1px solid $color-additional-light;
+    transition: border $animation-speed $animation-type;
 
     &:hover {
       border: 1px solid $color-additional-dark;
     }
+  }
+
+  &__carInput:checked + &__car {
+    border: 1px solid $color-accent;
   }
 
   &__model {
