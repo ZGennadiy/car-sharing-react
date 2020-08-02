@@ -20,6 +20,7 @@
   @media (max-width: $max-mobile) {
     position: absolute;
     background: none;
+    transform: translateX(-100%);
   }
 
   &__toggle {
@@ -45,6 +46,7 @@
 
     @media (max-width: $max-mobile) {
       top: 16px;
+      transform: translateX(150%);
     }
   }
 
@@ -79,7 +81,7 @@
     top: 8px;
   }
 
-  &__toggle:checked ~ &__btn > &__hamburger {
+  &__toggle:checked~&__btn>&__hamburger {
     transform: rotate(45deg);
 
     @media (max-width: $max-mobile) {
@@ -87,7 +89,7 @@
     }
   }
 
-  &__toggle:checked ~ &__btn > &__hamburger::before {
+  &__toggle:checked~&__btn>&__hamburger::before {
     top: 0;
     transform: rotate(0);
 
@@ -96,7 +98,7 @@
     }
   }
 
-  &__toggle:checked ~ &__btn > &__hamburger::after {
+  &__toggle:checked~&__btn>&__hamburger::after {
     top: 0;
     transform: rotate(90deg);
 
@@ -105,26 +107,26 @@
     }
   }
 
-  &__toggle:checked ~ &__wrapper {
+  &__toggle:checked~&__wrapper {
     width: 100vw;
     height: 100vh;
     background: $nav-open;
     transform: translateX(0);
     transition: transform $animation-speed $animation-type;
 
+    @media (max-width: $max-mobile) {
+      transform: translateX(64px);
+    }
+
     &_mainPage {
-      background: linear-gradient(
-        to right,
-        $nav-open 50.1vw,
-        rgba(21, 27, 31, 0.81) 50.1vw
-      );
+      background: linear-gradient(to right,
+          $nav-open 50.1vw,
+          rgba(21, 27, 31, 0.81) 50.1vw);
 
       @media (min-width: $min-desktop) and (max-width: $max-desktop) {
-        background: linear-gradient(
-          to left,
-          rgba(21, 27, 31, 0.81) 410px,
-          $nav-open 410px
-        );
+        background: linear-gradient(to left,
+            rgba(21, 27, 31, 0.81) 410px,
+            $nav-open 410px);
       }
 
       @media (max-width: $max-tablet) {
@@ -133,14 +135,13 @@
     }
   }
 
-  &__toggle:checked ~ .langBtn {
+  &__toggle:checked~.langBtn {
     z-index: 5;
 
     @media (max-width: $max-mobile) {
       display: block;
-      opacity: 1;
       z-index: 15;
-      transition: opacity $animation-speed $animation-type;
+      transform: translateX(64px);
     }
   }
 
@@ -247,11 +248,9 @@
 
   @media (max-width: $max-mobile) {
     display: none;
-    opacity: 0;
     left: 16px;
     transform: none;
     bottom: 16px;
-    transition: opacity $animation-speed $animation-type;
   }
 
   &:hover {

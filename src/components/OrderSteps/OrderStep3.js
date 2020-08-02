@@ -38,24 +38,24 @@ export const OrderStep3 = () => {
       <p className={styles.sectionName}>Дата аренды</p>
       <div className={styles.textInputs}>
         <label>
-          С
+          <span>С</span>
           <input
             className={styles.orderpage__input}
             placeholder="Введите дату и время"
-            type="datetime-local"
+            type="text"
           />
         </label>
         <label>
-          По
+          <span>По</span>
           <input
             className={styles.orderpage__input}
             placeholder="Введите дату и время"
-            type="datetime-local"
+            type="text"
           />
         </label>
       </div>
       <p className={styles.sectionName}>Тариф</p>
-      <div className={styles.radioInputs}>
+      <div className={`${styles.radioInputs} ${styles.radioInputs_col}`}>
         {tariff.map(({value, txt, defaultChecked}, index) => (
           <label key={String(index)} className={styles.radioInputs__label}>
             <input
@@ -70,10 +70,14 @@ export const OrderStep3 = () => {
         ))}
       </div>
       <p className={styles.sectionName}>Доп услуги</p>
-      <div>
+      <div className={`${styles.checkboxInputs} ${styles.checkboxInputs_col}`}>
         {options.map(({value, txt}, index) => (
-          <label key={String(index)}>
-            <input type="checkbox" value={value} />
+          <label key={String(index)} className={styles.checkboxInputs__label}>
+            <input
+              className={styles.checkboxInputs__input}
+              type="checkbox"
+              value={value}
+            />
             <span>{txt}</span>
           </label>
         ))}
