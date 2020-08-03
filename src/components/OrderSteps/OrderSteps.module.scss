@@ -365,7 +365,11 @@
         width: 224px;
       }
     }
-
-
   }
+}
+
+.orderSummury {
+  display: flex;
+  justify-content: space-between;
+  max-width: 736px;
 }

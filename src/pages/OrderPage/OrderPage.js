@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
+// import {Switch, Route, Redirect} from 'react-router-dom';
 import styles from './OrderPage.module.scss';
 import {OrderContext} from '../../context/OrderContext';
 import {Header} from '../../components/Header/Header';
 import {Breadcrumbs} from '../../components/Breadcrumbs/Breadcrumbs';
 // import {OrderStep1} from '../../components/OrderSteps/OrderStep1';
 // import {OrderStep2} from '../../components/OrderSteps/OrderStep2';
-import {OrderStep3} from '../../components/OrderSteps/OrderStep3';
+// import {OrderStep3} from '../../components/OrderSteps/OrderStep3';
+import {OrderStep4} from '../../components/OrderSteps/OrderStep4';
 import {OrderState} from '../../components/OrderSteps/OrderState';
 
 export const OrderPage = () => {
@@ -24,9 +26,13 @@ export const OrderPage = () => {
           <Breadcrumbs />
           <div className={styles.orderpage__container}>
             <section className={styles.orderpage__orderMake}>
-              {/* <OrderStep1 /> */}
-              {/* <OrderStep2 /> */}
-              <OrderStep3 />
+              {/* <Switch>
+                <Route path="/order#step1" component={OrderStep1} />
+                <Route path="/order#step2" component={OrderStep2} />
+                <Route path="/order#step3" component={OrderStep3} />
+                <Redirect to="/order#step1" />
+              </Switch> */}
+              <OrderStep4 />
             </section>
             <OrderState />
           </div>

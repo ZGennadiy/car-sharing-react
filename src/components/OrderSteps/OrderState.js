@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import {Link} from 'react-router-dom';
 import {OrderContext} from '../../context/OrderContext';
 import styles from './OrderSteps.module.scss';
 import {Button} from '../Button/Button';
@@ -24,11 +25,13 @@ export const OrderState = () => {
           от 8 000 до 12 000 ₽
         </span>
       </p>
-      <Button
-        value="Выбрать модель"
-        btnModifier="button_mobileFullWidth"
-        onClick={() => goNextStep(order)}
-      />
+      <Link to={`/order#step${order.stepOrder + 1}`}>
+        <Button
+          value="Выбрать модель"
+          btnModifier="button_mobileFullWidth"
+          onClick={() => goNextStep(order)}
+        />
+      </Link>
     </section>
   );
 };
