@@ -7,7 +7,7 @@ export const OrderStep4 = () => (
     <div className={styles.orderSummury}>
       <div className={styles.catalogue__aboutCar}>
         <p className={styles.catalogue__model}>Hyndai, i30 N</p>
-        <p className={styles.catalogue__carNumber}>K 761 HA 73</p>
+        <p className={styles.catalogue__licencePlate}>K 761 HA 73</p>
         <p className={styles.catalogue__option}>
           Топливо <span className={styles.catalogue__optionValue}>100%</span>
         </p>

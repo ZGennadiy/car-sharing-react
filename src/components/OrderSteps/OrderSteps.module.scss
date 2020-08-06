@@ -53,12 +53,12 @@
     line-height: 16px;
     color: $color-main;
 
-    &>p {
+    & > p {
       margin-top: 0;
       margin-bottom: 16px;
     }
 
-    &>img {
+    & > img {
       width: 100%;
     }
   }
@@ -143,29 +143,29 @@
     flex-direction: column;
   }
 
-  &__label>&__input {
+  &__label > &__input {
     position: absolute;
     z-index: -1;
     opacity: 0;
 
-    &:not(:disabled):active+span::before {
+    &:not(:disabled):active + span::before {
       box-shadow: inset 0 0 4px 0.2rem $color-accent;
     }
 
-    &:focus+span::before {
+    &:focus + span::before {
       box-shadow: inset 0 0 3px 0.2rem $color-accent;
     }
 
-    &:checked+span::before {
+    &:checked + span::before {
       box-shadow: inset 0 0 0 0.2rem $color-accent;
     }
 
-    &:checked+span {
+    &:checked + span {
       color: $color-main;
     }
   }
 
-  &__label>span {
+  &__label > span {
     cursor: pointer;
     margin-right: 16px;
     margin-bottom: 8px;
@@ -205,29 +205,29 @@
     flex-direction: column;
   }
 
-  &__label>&__input {
+  &__label > &__input {
     position: absolute;
     z-index: -1;
     opacity: 0;
 
-    &:checked+span::before {
+    &:checked + span::before {
       border-color: $color-accent;
     }
 
-    &:checked+span::after {
+    &:checked + span::after {
       background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.625 3.33333L0 5L4.875 10L13 1.66667L11.375 0L4.875 6.66667L1.625 3.33333Z' fill='%23121212'/%3e%3c/svg%3e ");
     }
 
-    &:not(:checked)+span::before {
+    &:not(:checked) + span::before {
       box-shadow: none;
     }
 
-    &:checked+span {
+    &:checked + span {
       color: $color-main;
     }
   }
 
-  &__label>span {
+  &__label > span {
     position: relative;
     cursor: pointer;
     margin-right: 16px;
@@ -282,7 +282,7 @@
   flex-wrap: wrap;
   @include Roboto;
 
-  &>label {
+  & > label {
     flex-grow: 1;
   }
 
@@ -306,7 +306,7 @@
     }
   }
 
-  &__carInput:checked+&__car {
+  &__carInput:checked + &__car {
     border: 1px solid $color-accent;
   }
 
@@ -334,6 +334,27 @@
   &__img {
     max-width: 100%;
   }
+
+  &__licencePlate {
+    margin: 8px 0;
+    padding: 4px 8px;
+    @include Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-main;
+    width: fit-content;
+    border: 1px solid $color-additional-dark;
+    border-radius: 4px;
+  }
+
+  &__option {
+    margin: 8px 0;
+    @include Roboto-bold;
+    color: $color-main;
+    &Value {
+      @include Roboto-light;
+    }
+  }
 }
 
 .sectionName {
@@ -344,11 +365,11 @@
   line-height: 16px;
   color: $color-main;
 
-  &~& {
+  & ~ & {
     margin-top: 32px;
   }
 
-  &+.textInputs {
+  & + .textInputs {
     @include Roboto-light;
     color: $color-main;
     font-size: 14px;
@@ -358,7 +379,7 @@
     align-items: flex-end;
     width: 250px;
 
-    &>label>.orderpage__input {
+    & > label > .orderpage__input {
       width: 224px;
 
       @media (max-width: $max-mobile) {
@@ -371,5 +392,6 @@
 .orderSummury {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   max-width: 736px;
 }
